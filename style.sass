@@ -1,0 +1,102 @@
+@use 'general'
+
+$card-bg: #fff
+$card-color: hsl(224, 23%, 55%)
+$blue: hsl(245, 75%, 52%)
+$blue-active: rgba(56, 41, 224, .65)
+$heading-color: hsl(223, 47%, 23%)
+$other-bg: hsl(225, 100%, 98%)
+
+.container
+  min-block-size: 100vh
+  padding-block: 50px
+  display: flex
+
+.order
+  align-self: center
+  background: $card-bg
+  margin-inline: auto
+  max-inline-size: min(90vw, 30rem)
+  border-radius: 20px
+  text-align: center
+  color: $card-color
+  font-weight: 500
+
+  &__hero
+    border-radius: 20px 20px 0 0
+
+  &__content
+    padding: 30px
+
+    > *:not(:last-child)
+      margin-block-end: 20px
+
+  &__title
+    color: $heading-color
+    font-weight: 900
+    font-size: clamp(1.5rem, 1.5rem + .3vw, 1.8rem)
+
+  &__desc
+    font-size: clamp(1rem, 1rem + .3vw, 1.2rem)
+  
+  &__product
+    display: flex
+    align-items: center
+    padding: 20px
+    border-radius: 10px
+    background: $other-bg
+
+  &__info > *
+    margin-inline-start: 20px
+    display: block
+
+  strong
+    color: $heading-color
+
+  &__change a
+    color: $blue
+    &:active
+      color: $blue-active
+
+  &__change
+    margin-inline-start: auto
+    display: flex
+    align-items: center
+    a
+      font-weight: 700
+
+  .button
+    text-decoration: none
+    color: inherit
+    font-weight: 700
+    inline-size: 100%
+    display: inline-block
+    border-radius: 10px
+    padding: 15px
+
+    &--color-blue
+      @extent button
+      color: #fff
+      background: $blue
+      box-shadow: 0px 5px 15px 7px rgba(0, 0, 0, .2)
+      margin-block-end: 15px
+
+      &:active
+        background: $blue-active
+
+    &--transparent:active
+      color: #000
+
+
+@media (min-width: 48em)
+  :root
+    background: url("images/pattern-background-desktop.svg") no-repeat hsl(225, 100%, 94%)
+
+  .container
+    padding: 0
+
+  .order
+    &__hero
+      inline-size: 100%
+    &__content
+      padding: 50px

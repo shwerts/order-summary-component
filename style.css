@@ -1,5 +1,106 @@
 :root {
   font-family: "Red Hat Display", sans-serif;
+  background: url("images/pattern-background-mobile.svg") no-repeat hsl(225, 100%, 94%);
+  background-size: contain;
+}
+
+.container {
+  min-block-size: 100vh;
+  padding-block: 50px;
+  display: flex;
+}
+
+.order {
+  align-self: center;
+  background: #fff;
+  margin-inline: auto;
+  max-inline-size: min(90vw, 30rem);
+  border-radius: 20px;
+  text-align: center;
+  color: hsl(224, 23%, 55%);
+  font-weight: 500;
+}
+.order__hero {
+  border-radius: 20px 20px 0 0;
+}
+.order__content {
+  padding: 30px;
+}
+.order__content > *:not(:last-child) {
+  margin-block-end: 20px;
+}
+.order__title {
+  color: hsl(223, 47%, 23%);
+  font-weight: 900;
+  font-size: clamp(1.5rem, 1.5rem + 0.3vw, 1.8rem);
+}
+.order__desc {
+  font-size: clamp(1rem, 1rem + 0.3vw, 1.2rem);
+}
+.order__product {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  background: hsl(225, 100%, 98%);
+}
+.order__info > * {
+  margin-inline-start: 20px;
+  display: block;
+}
+.order strong {
+  color: hsl(223, 47%, 23%);
+}
+.order__change a {
+  color: hsl(245, 75%, 52%);
+}
+.order__change a:active {
+  color: rgba(56, 41, 224, 0.65);
+}
+.order__change {
+  margin-inline-start: auto;
+  display: flex;
+  align-items: center;
+}
+.order__change a {
+  font-weight: 700;
+}
+.order .button {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 700;
+  inline-size: 100%;
+  display: inline-block;
+  border-radius: 10px;
+  padding: 15px;
+}
+.order .button--color-blue {
+  @extent button;
+  color: #fff;
+  background: hsl(245, 75%, 52%);
+  box-shadow: 0px 5px 15px 7px rgba(0, 0, 0, 0.2);
+  margin-block-end: 15px;
+}
+.order .button--color-blue:active {
+  background: rgba(56, 41, 224, 0.65);
+}
+.order .button--transparent:active {
+  color: #000;
+}
+
+@media (min-width: 48em) {
+  :root {
+    background: url("images/pattern-background-desktop.svg") no-repeat hsl(225, 100%, 94%);
+  }
+  .container {
+    padding: 0;
+  }
+  .order__hero {
+    inline-size: 100%;
+  }
+  .order__content {
+    padding: 50px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
